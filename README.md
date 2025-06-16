@@ -1,0 +1,7 @@
+# Dotfiles
+
+### Install:
+
+```bash
+stow .
+```
