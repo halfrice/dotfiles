@@ -6,6 +6,9 @@ setopt auto_pushd
 setopt pushd_ignore_dups
 setopt pushdminus
 
+# Starship
+eval "$(starship init zsh)"
+
 # NVM
 export NVM_DIR="$HOME/.nvm"
   # This loads nvm

@@ -1,0 +1,86 @@
+add_newline = false
+
+format = """
+$directory\
+$git_branch\
+$git_status\
+$nodejs\
+$rust\
+$golang\
+$php\
+$java\
+$lua\
+$python\
+$ruby\
+$c\
+$character"""
+
+[character]
+success_symbol = '[❯](bold green)'
+error_symbol = '[❯](bold red)'
+
+[directory]
+style = "fg:#89ddff"
+format = "[$path ](bold $style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+
+[git_branch]
+symbol = ""
+style = "fg:#769ff0"
+format = '[$symbol $branch ]($style)'
+
+[git_status]
+style = "fg:#769ff0"
+format = '[($all_status$ahead_behind )]($style)'
+
+[nodejs]
+symbol = ""
+style = "fg:#bb9af7"
+format = '[$symbol ($version) ]($style)'
+
+[rust]
+symbol = ""
+style = "fg:#bb9af7"
+format = '[$symbol ($version) ]($style)'
+
+[golang]
+symbol = ""
+style = "fg:#bb9af7"
+format = '[$symbol ($version) ]($style)'
+
+[php]
+symbol = ""
+style = "fg:#bb9af7"
+format = '[$symbol ($version) ]($style)'
+
+[java]
+symbol = ""
+style = "fg:#bb9af7"
+format = '[$symbol ($version) ]($style)'
+
+[lua]
+symbol = ""
+style = "fg:#bb9af7"
+format = '[$symbol ($version) ]($style)'
+
+[python]
+symbol = ""
+style = "fg:#bb9af7"
+format = '[$symbol ($version) ]($style)'
+
+[ruby]
+symbol = ""
+style = "fg:#bb9af7"
+format = '[$symbol ($version) ]($style)'
+
+[c]
+symbol = "󰬊"
+style = "fg:#bb9af7"
+format = '[$symbol ($version) ]($style)'
