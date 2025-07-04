@@ -6,6 +6,23 @@ setopt auto_pushd
 setopt pushd_ignore_dups
 setopt pushdminus
 
+# Prevent closing the shell session (CTRL+d closing Wezterm and iterm2) 
+setopt ignore_eof
+
+# Webdev OCD <HTML lang="en"><meta charset="utf-8">
+export LANG=en_US.UTF-8
+
+# Default editor
+export EDITOR=/usr/local/bin/nvim
+
+# VI mode
+bindkey jj vi-cmd-mode
+
+# List directory contents
+alias l='ls -lah'
+alias ll='ls -lh'
+alias la='ls -lAh'
+
 # Starship
 eval "$(starship init zsh)"
 

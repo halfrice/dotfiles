@@ -21,6 +21,7 @@ local direction_keys = {
   l = 'Right',
 }
 
+-- Handle command to navigate between panes or resize the active pane
 local function split_nav(resize_or_move, key)
   return {
     key = key,
@@ -47,9 +48,9 @@ config.color_scheme = 'Tokyo Night'
 config.term = 'xterm-256color'
 
 -- Fonts
-config.font_size = 16
+config.font_size = 18
 config.font = wezterm.font_with_fallback({
-  { family = 'UbuntuMono Nerd Font', scale = 1 },
+  { family = 'UbuntuMono Nerd Font', scale = 1.0 },
 })
 config.adjust_window_size_when_changing_font_size = false
 
@@ -60,7 +61,7 @@ config.hide_tab_bar_if_only_one_tab = true
 
 -- Windows
 config.window_background_opacity = 0.80
-config.macos_window_background_blur = 24
+config.macos_window_background_blur = 64
 config.window_decorations = 'RESIZE'
 config.window_padding = {
   left = 0,
@@ -68,6 +69,16 @@ config.window_padding = {
   top = 0,
   bottom = 0,
 }
+config.inactive_pane_hsb = {
+  saturation = 1,
+  brightness = 1,
+}
+
+-- Cursor
+config.default_cursor_style = 'BlinkingBlock'
+config.cursor_blink_rate = 438 -- Tempo 🎧
+config.cursor_blink_ease_in = 'Constant'
+config.cursor_blink_ease_out = 'Constant'
 
 -- Keybinds
 -- Show default keybinds command: wezterm show-keys --lua
@@ -87,6 +98,10 @@ config.keys = {
   split_nav('resize', 'l'),
   -- Maximize active pane
   { key = 'm', mods = 'LEADER', action = act.TogglePaneZoomState },
+  -- Close active pane
+  -- { key = 'w', mods = 'CTRL|SHIFT', action = act.CloseCurrentPane({ confirm = true }) },
+  -- Remove default keybind for CloseCurrentPane
+  { key = 'w', mods = 'CTRL|SHIFT', action = wezterm.action.DisableDefaultAssignment },
   -- { key = 'k', mods = 'CTRL', action = act.ActivatePaneDirection('Up') },
   -- { key = 'j', mods = 'CTRL', action = act.ActivatePaneDirection('Down') },
   -- { key = 'h', mods = 'CTRL', action = act.ActivatePaneDirection('Left') },
@@ -101,6 +116,22 @@ config.keys = {
   { key = 'n', mods = 'LEADER', action = act.ActivateTabRelative(1) },
   -- Vi-mode (CTRL-C to exit)
   { key = '[', mods = 'LEADER', action = act.ActivateCopyMode },
+  -- Rename tab interactively
+  {
+    key = ',',
+    mods = 'LEADER',
+    action = act.PromptInputLine({
+      description = 'Enter new name for tab',
+      action = wezterm.action_callback(function(window, pane, line)
+        -- line will be `nil` if they hit escape without entering anything
+        -- An empty string if they just hit enter
+        -- Or the actual line of text they wrote
+        if line then
+          window:active_tab():set_title(line)
+        end
+      end),
+    }),
+  },
 }
 
 return config
