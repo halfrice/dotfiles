@@ -23,6 +23,9 @@ alias l='ls -lah'
 alias ll='ls -lh'
 alias la='ls -lAh'
 
+# iCloud
+alias i='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/'
+
 # Starship
 eval "$(starship init zsh)"
 
