@@ -38,7 +38,7 @@ require('nvim-tree').setup({
 vim.cmd('autocmd VimEnter * hi NvimTreeNormal guibg=NONE')
 vim.cmd('autocmd VimEnter * hi NvimTreeNormalNC guibg=NONE')
 
-vim.keymap.set("n", "<leader>ee", "<cmd>NvimTreeToggle<cr>", { desc = "Toggle file explorer" })
-vim.keymap.set("n", "<leader>ef", "<cmd>NvimTreeFindFileToggle<cr>", { desc = "Toggle file explorer on current file" })
-vim.keymap.set("n", "<leader>ew", "<cmd>NvimTreeCollapse<cr>", { desc = "Collapse file explorer" })
-vim.keymap.set("n", "<leader>er", "<cmd>NvimTreeRefresh<cr>", { desc = "Refresh file explorer" })
+vim.keymap.set('n', '<leader>ee', '<cmd>NvimTreeToggle<cr>', { desc = 'Toggle file explorer' })
+vim.keymap.set('n', '<leader>ef', '<cmd>NvimTreeFindFileToggle<cr>', { desc = 'Toggle file explorer on current file' })
+vim.keymap.set('n', '<leader>ew', '<cmd>NvimTreeCollapse<cr>', { desc = 'Collapse file explorer' })
+vim.keymap.set('n', '<leader>er', '<cmd>NvimTreeRefresh<cr>', { desc = 'Refresh file explorer' })
