@@ -9,7 +9,7 @@ vim.keymap.set('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 })
 
 -- Lines
--- Allow highlighted lines to be moved up or down as a block with auto-indentation
+-- Allows highlighted lines to be moved up or down as a block with auto-indentation
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
 vim.keymap.set('n', 'J', 'mzJ`z') -- Join next line with current line while keeping cursor in place
@@ -17,8 +17,6 @@ vim.keymap.set('n', 'J', 'mzJ`z') -- Join next line with current line while keep
 -- Navigation
 vim.keymap.set('n', '<C-k>', '<cmd>cnext<CR>zz')
 vim.keymap.set('n', '<C-j>', '<cmd>cprev<CR>zz')
-vim.keymap.set('n', '<leader>k', '<cmd>lnext<CR>zz')
-vim.keymap.set('n', '<leader>j', '<cmd>lprev<CR>zz')
 
 -- Scrolling
 -- Half-page scrolling leaves cursor centered

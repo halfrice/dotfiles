@@ -17,10 +17,14 @@ return {
       completion = {
         callSnippet = 'Replace',
       },
-      diagnostics = { globals = { 'vim' } }, -- Recognize 'vim' global
       format = { enable = false },
+      hint = { enable = true },
+      runtime = { version = 'LuaJIT' },
       telemetry = { enable = false },
-      workspace = { checkThirdParty = false },
+      workspace = {
+        checkThirdParty = false,
+        library = { vim.env.VIMRUNTIME },
+      },
     },
   },
 }
