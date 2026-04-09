@@ -24,12 +24,13 @@ opt.sidescrolloff = 8 -- Columns to keep before and after cursor
 opt.termguicolors = true -- Enable 24-bit colors
 opt.background = 'dark' -- Lighter highlight colors for dark theme
 opt.virtualedit = 'block' -- Cursor 'noclip' in visual block mode
-opt.cmdheight = 0 -- Hides the command line
+-- opt.cmdheight = 0 -- Hides the command line
 opt.pumblend = 10 -- Popup-menu transparency
 opt.pumheight = 10
 -- Blinking cursor with calm blink rate. Syncs with music around 69 or 138 bpm
 opt.guicursor = 'n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait436-blinkoff218-blinkon218-Cursor/lCursor'
 opt.fillchars = { eob = ' ' } -- Hides the tidle(~) EOF chars
+opt.foldenable = false
 
 -- Splits
 opt.splitbelow = true -- Horizontal split goes below
