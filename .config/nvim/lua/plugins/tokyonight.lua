@@ -6,9 +6,18 @@ require('tokyonight').setup({
   -- nvim-tree transparency fix
   styles = {
     sidebars = 'transparent',
+    floats = 'transparent',
   },
 
-  -- Statusbar transparency fix
+  -- Bufferline transparency fix
+  on_highlights = function(highlight, colors)
+    -- TabLineFill is defaulted to black. Set it to none
+    highlight.TabLineFill = {
+      bg = colors.none,
+    }
+  end,
+
+  -- Lualine (statusbar) transparency fix
   on_colors = function(colors)
     colors.bg_statusline = colors.none
   end,

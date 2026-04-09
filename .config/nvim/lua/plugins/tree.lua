@@ -1,5 +1,6 @@
 vim.pack.add({
   'https://github.com/nvim-tree/nvim-tree.lua',
+  -- Dependencies
   'https://github.com/nvim-tree/nvim-web-devicons',
 })
 
@@ -8,7 +9,10 @@ require('nvim-tree').setup({
     sorter = 'case_sensitive',
   },
   view = {
-    width = 35,
+    number = false,
+    relativenumber = false,
+    signcolumn = 'no',
+    width = 32,
   },
   renderer = {
     group_empty = true,
@@ -19,7 +23,7 @@ require('nvim-tree').setup({
   actions = {
     open_file = {
       window_picker = {
-        enable = false, -- Clashes with window splits when enabled
+        enable = false,
       },
     },
   },
@@ -33,10 +37,6 @@ require('nvim-tree').setup({
     ignore = false,
   },
 })
-
--- Set nvim-tree background to none so it matches transparency levels
-vim.cmd('autocmd VimEnter * hi NvimTreeNormal guibg=NONE')
-vim.cmd('autocmd VimEnter * hi NvimTreeNormalNC guibg=NONE')
 
 vim.keymap.set('n', '<leader>ee', '<cmd>NvimTreeToggle<cr>', { desc = 'Toggle file explorer' })
 vim.keymap.set('n', '<leader>ef', '<cmd>NvimTreeFindFileToggle<cr>', { desc = 'Toggle file explorer on current file' })

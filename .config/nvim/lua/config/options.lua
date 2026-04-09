@@ -14,7 +14,8 @@ opt.smartindent = true
 opt.cursorline = true -- Highlights current line
 opt.number = true -- Display the current line number
 opt.relativenumber = true -- Shows distance of other lines relative to current
-opt.signcolumn = 'yes' -- Always shows sign column (left of line numbers)
+opt.statuscolumn = '%2l ' -- Sets the minimum spacing of the numbers column to 3
+opt.signcolumn = 'number' -- Always shows sign column (left of line numbers)
 opt.wrap = false -- Disables line wrapping
 opt.scrolloff = 8 -- Lines to keep above and below current line
 opt.sidescrolloff = 8 -- Columns to keep before and after cursor
@@ -23,11 +24,12 @@ opt.sidescrolloff = 8 -- Columns to keep before and after cursor
 opt.termguicolors = true -- Enable 24-bit colors
 opt.background = 'dark' -- Lighter highlight colors for dark theme
 opt.virtualedit = 'block' -- Cursor 'noclip' in visual block mode
-opt.laststatus = 3 -- Global statusline instead of statusline for every split
+opt.cmdheight = 0 -- Hides the command line
 opt.pumblend = 10 -- Popup-menu transparency
 opt.pumheight = 10
 -- Blinking cursor with calm blink rate. Syncs with music around 69 or 138 bpm
 opt.guicursor = 'n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait436-blinkoff218-blinkon218-Cursor/lCursor'
+opt.fillchars = { eob = ' ' } -- Hides the tidle(~) EOF chars
 
 -- Splits
 opt.splitbelow = true -- Horizontal split goes below

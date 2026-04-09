@@ -1,0 +1,34 @@
+vim.pack.add({
+  'https://github.com/rmagatti/auto-session',
+  -- Dependencies
+  'https://github.com/nvim-tree/nvim-tree.lua',
+})
+
+require('auto-session').setup({
+  single_session_mode = true,
+  auto_session_suppress_dirs = {
+    '/',
+    '~/',
+    '~/Applications/',
+    '~/Desktop/',
+    '~/Documents',
+    '~/Downloads',
+    '~/Library/',
+    '~/Movies/',
+    '~/Music/',
+    '~/Pictures/',
+    '~/Public/',
+  },
+  post_restore_cmds = {
+    function()
+      local nvim_tree = require('nvim-tree.api')
+      nvim_tree.tree.change_root(vim.fn.getcwd())
+      nvim_tree.tree.open()
+    end,
+  },
+})
+
+vim.o.sessionoptions = 'blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions'
+
+vim.keymap.set('n', '<leader>pr', '<cmd>AutoSession restore<cr>', { desc = 'Load session' })
+vim.keymap.set('n', '<leader>ps', '<cmd>AutoSession save<cr>', { desc = 'Save session' })
