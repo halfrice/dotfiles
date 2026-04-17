@@ -1,11 +1,9 @@
 vim.pack.add({
   'https://github.com/rmagatti/auto-session',
-  -- Dependencies
   'https://github.com/nvim-tree/nvim-tree.lua',
 })
 
 require('auto-session').setup({
-  single_session_mode = true,
   auto_session_suppress_dirs = {
     '/',
     '~/',
@@ -17,6 +15,7 @@ require('auto-session').setup({
     '~/Movies/',
     '~/Music/',
     '~/Pictures/',
+    '~/Podcasts/',
     '~/Public/',
   },
   post_restore_cmds = {

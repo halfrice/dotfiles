@@ -1,14 +1,31 @@
-vim.lsp.enable({
-  'lua-language-server',
+-- vim.lsp.enable({
+--   'lua_ls',
+--   'basedpyright',
+--   'ruff',
+-- })
+
+-- Disables hover capability from Ruff
+vim.api.nvim_create_autocmd('LspAttach', {
+  group = vim.api.nvim_create_augroup('lsp_attach_disable_ruff_hover', { clear = true }),
+  callback = function(args)
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    if client == nil then
+      return
+    end
+    if client.name == 'ruff' then
+      client.server_capabilities.hoverProvider = false
+    end
+  end,
+  desc = 'LSP: Disable hover capability from Ruff',
 })
 
+-- LSP keymaps
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('LspKeymaps', { clear = true }),
   callback = function()
-    vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = 'Code Actions' })
+    vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, { desc = 'Code Actions' })
     vim.keymap.set('n', '<leader>cr', vim.lsp.buf.rename, { desc = 'Code Rename' })
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'Hover Documentation' })
-    vim.keymap.set('n', '<leader>di', vim.diagnostic.open_float, { desc = 'Diagnostics' })
     vim.keymap.set('n', '<leader>ih', function()
       vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
     end, { desc = 'Toggle Inlay Hints' })

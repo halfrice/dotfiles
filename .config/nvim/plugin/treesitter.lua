@@ -3,7 +3,6 @@ vim.pack.add({
     src = 'https://github.com/nvim-treesitter/nvim-treesitter',
     version = 'main',
   },
-  -- Dependencies
   {
     src = 'https://github.com/nvim-treesitter/nvim-treesitter-textobjects',
     version = 'main',
@@ -84,7 +83,7 @@ local select_keymaps = {
 
 for _, v in ipairs(select_keymaps) do
   local modes, keys, command = v[1], v[2], v[3]
-  vim.keymap.set(modes, keys, function(n)
+  vim.keymap.set(modes, keys, function()
     select.select_textobject(command, 'textobjects')
   end, { desc = 'Select ' .. command })
 end

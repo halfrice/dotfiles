@@ -1,6 +1,3 @@
-vim.g.mapleader = ' '
-vim.g.maplocalleader = '\\'
-
 local opt = vim.opt
 
 -- Indentation
@@ -8,7 +5,9 @@ opt.expandtab = true -- Team spaces gg ez
 opt.tabstop = 2 -- Tab width
 opt.shiftwidth = 2 -- Indent width
 opt.shiftround = true -- Keeps indents at a multiple of shift width
-opt.smartindent = true
+opt.autoindent = true -- Copy indent level from current line for new line
+opt.smartindent = true -- Improves autoindent
+opt.softtabstop = 2 -- Disables insertion of literal tabs
 
 -- Lines
 opt.cursorline = true -- Highlights current line
@@ -24,13 +23,14 @@ opt.sidescrolloff = 8 -- Columns to keep before and after cursor
 opt.termguicolors = true -- Enable 24-bit colors
 opt.background = 'dark' -- Lighter highlight colors for dark theme
 opt.virtualedit = 'block' -- Cursor 'noclip' in visual block mode
--- opt.cmdheight = 0 -- Hides the command line
+opt.cmdheight = 0 -- Hides the command line
 opt.pumblend = 10 -- Popup-menu transparency
 opt.pumheight = 10
 -- Blinking cursor with calm blink rate. Syncs with music around 69 or 138 bpm
 opt.guicursor = 'n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait436-blinkoff218-blinkon218-Cursor/lCursor'
 opt.fillchars = { eob = ' ' } -- Hides the tidle(~) EOF chars
-opt.foldenable = false
+opt.foldenable = false -- Disables code folding
+opt.winborder = 'solid' -- Floating window styling
 
 -- Splits
 opt.splitbelow = true -- Horizontal split goes below
@@ -53,8 +53,11 @@ opt.autowrite = true -- Auto-saves on certain events, e.g. swapping buffers
 opt.confirm = true -- Confirm to save changes (if any) before exiting
 opt.inccommand = 'nosplit' -- Shows the effects of a command incrementally in the buffer
 opt.clipboard:append('unnamed,unnamedplus') -- Allows (p)aste to use system clipboard
+opt.synmaxcol = 300 -- Syntax highlighting limit
+opt.timeoutlen = 300 -- Timeout length for key combos
+opt.updatetime = 200 -- Executes commands after cursor inactivity
 
 -- Input
 opt.backspace = 'indent,eol,start' -- Changes backspace to work 'normally'
 opt.mouse = 'a'
-opt.timeoutlen = 300 -- Timeout length for key combos
+opt.mousescroll = { 'ver:1', 'hor:2' } -- Adjusts scrolling speed

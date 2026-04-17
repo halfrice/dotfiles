@@ -18,6 +18,10 @@ vim.keymap.set('n', 'J', 'mzJ`z') -- Join next line with current line while keep
 vim.keymap.set('n', '<C-k>', '<cmd>cnext<CR>zz')
 vim.keymap.set('n', '<C-j>', '<cmd>cprev<CR>zz')
 
+-- Indentation
+vim.keymap.set('v', '<', '<gv', { desc = 'Indent left' })
+vim.keymap.set('v', '>', '>gv', { desc = 'Indent right' })
+
 -- Scrolling
 -- Half-page scrolling leaves cursor centered
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
@@ -29,3 +33,4 @@ vim.keymap.set('n', 'N', 'Nzzzv')
 -- Misc
 -- Make file executable
 vim.keymap.set('n', '<leader>x', '<cmd>!chmod +x %<CR>', { silent = true })
+vim.keymap.set('n', '<leader>rr', '<cmd>restart<cr>', { desc = 'Restart Neovim' })

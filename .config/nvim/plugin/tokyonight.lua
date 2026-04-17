@@ -9,16 +9,14 @@ require('tokyonight').setup({
     floats = 'transparent',
   },
 
-  -- Bufferline transparency fix
   on_highlights = function(highlight, colors)
-    -- TabLineFill is defaulted to black. Set it to none
-    highlight.TabLineFill = {
-      bg = colors.none,
-    }
+    -- Darker CursorLine
+    highlight.CursorLine = { bg = colors.bg_dark }
+    highlight.Visual = { bg = colors.bg_dark }
   end,
 
-  -- Lualine (statusbar) transparency fix
   on_colors = function(colors)
+    -- Lualine (statusbar) transparency fix
     colors.bg_statusline = colors.none
   end,
 })
