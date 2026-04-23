@@ -15,5 +15,9 @@ require('mason-tool-installer').setup({
     -- Python
     'basedpyright',
     'ruff',
+    -- Javascript / Typescript
+    'ts_ls',
+    'oxlint',
+    'oxfmt',
   },
 })

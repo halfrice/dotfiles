@@ -18,13 +18,13 @@ vim.diagnostic.config({
 })
 
 local diagnostic_goto = function(next, severity)
-	severity = severity and vim.diagnostic.severity[severity] or nil
-	return function()
-		vim.diagnostic.jump({ count = next and 1 or -1, float = true, severity = severity })
-	end
+  severity = severity and vim.diagnostic.severity[severity] or nil
+  return function()
+    vim.diagnostic.jump({ count = next and 1 or -1, float = true, severity = severity })
+  end
 end
 
-vim.keymap.set('n', '<leader>di', vim.diagnostic.open_float, { desc = 'Diagnostics' })
+vim.keymap.set('n', '<leader>D', vim.diagnostic.open_float, { desc = 'Diagnostics' })
 vim.keymap.set('n', ']d', diagnostic_goto(true), { desc = 'Next Diagnostic' })
 vim.keymap.set('n', '[d', diagnostic_goto(false), { desc = 'Prev Diagnostic' })
 vim.keymap.set('n', ']e', diagnostic_goto(true, 'ERROR'), { desc = 'Next Error' })

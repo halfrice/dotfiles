@@ -85,6 +85,13 @@ require('bufferline').setup({
     pick = {
       bg = 'none',
     },
+    offset_separator = {
+      bg = 'none',
+    },
+    trunc_marker = {
+      fg = '#565f89',
+      bg = 'none',
+    },
   },
 })
 

@@ -13,16 +13,16 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- Show / Hide cursorline when window is focused / unfocused
-local default_cursor = vim.o.guicursor
-vim.api.nvim_create_autocmd({ 'FocusGained', 'TabEnter', 'WinEnter', 'BufEnter', 'VimEnter' }, {
-  callback = function()
-    vim.o.guicursor = default_cursor
-    vim.o.cursorline = true
-  end,
-})
-vim.api.nvim_create_autocmd({ 'FocusLost', 'TabLeave', 'WinLeave', 'BufLeave' }, {
-  callback = function()
-    vim.o.guicursor = 'a:noCursor'
-    vim.o.cursorline = false
-  end,
-})
+-- local default_cursor = vim.o.guicursor
+-- vim.api.nvim_create_autocmd({ 'FocusGained', 'TabEnter', 'WinEnter', 'BufEnter', 'VimEnter' }, {
+--   callback = function()
+--     vim.o.guicursor = default_cursor
+--     vim.o.cursorline = true
+--   end,
+-- })
+-- vim.api.nvim_create_autocmd({ 'FocusLost', 'TabLeave', 'WinLeave', 'BufLeave' }, {
+--   callback = function()
+--     vim.o.guicursor = 'a:noCursor'
+--     vim.o.cursorline = false
+--   end,
+-- })

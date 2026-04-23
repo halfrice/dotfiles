@@ -26,6 +26,7 @@ local parsers = {
   'java',
   'javascript',
   'json',
+  'jsx',
   'lua',
   'markdown',
   'python',
@@ -35,6 +36,7 @@ local parsers = {
   'sql',
   'tmux',
   'toml',
+  'tsx',
   'typescript',
   'vim',
   'vimdoc',
@@ -71,6 +73,9 @@ require('nvim-treesitter-textobjects').setup({
     set_jumps = true,
   },
 })
+
+-- Keymaps
+vim.keymap.set('n', '<leader>tu', '<cmd>TSUpdate<cr>', { desc = 'Update Treesitter Parsers' })
 
 -- Select keymaps
 local select = require('nvim-treesitter-textobjects.select')

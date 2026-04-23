@@ -18,9 +18,9 @@ snacks.setup({
   lazygit = { enabled = true },
 })
 
-vim.keymap.set('n', '<leader>dd', function()
-  snacks.dashboard.open()
-end, { desc = 'Snacks Dashboard' })
+-- vim.keymap.set('n', '<leader>dd', function()
+--   snacks.dashboard.open()
+-- end, { desc = 'Snacks Dashboard' })
 vim.keymap.set('n', '<leader>gg', function()
   snacks.lazygit.open()
 end, { desc = 'Lazygit' })

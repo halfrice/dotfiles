@@ -10,9 +10,10 @@ require('tokyonight').setup({
   },
 
   on_highlights = function(highlight, colors)
+    -- highlight.Cursor = { bg = '#FE021F' }
     -- Darker CursorLine
-    highlight.CursorLine = { bg = colors.bg_dark }
-    highlight.Visual = { bg = colors.bg_dark }
+    -- highlight.CursorLine = { bg = colors.bg_dark }
+    -- highlight.Visual = { bg = colors.bg_dark }
   end,
 
   on_colors = function(colors)

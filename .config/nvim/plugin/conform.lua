@@ -4,6 +4,12 @@ require('conform').setup({
   formatters_by_ft = {
     lua = { 'stylua' },
     python = { 'ruff_format' },
+    html = { 'oxfmt' },
+    css = { 'oxfmt' },
+    javascript = { 'oxfmt' },
+    javascriptreact = { 'oxfmt' },
+    typescript = { 'oxfmt' },
+    typescriptreact = { 'oxfmt' },
   },
   format_on_save = {
     lsp_fallback = true,

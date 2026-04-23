@@ -10,7 +10,7 @@ opt.smartindent = true -- Improves autoindent
 opt.softtabstop = 2 -- Disables insertion of literal tabs
 
 -- Lines
-opt.cursorline = true -- Highlights current line
+opt.cursorline = false -- Highlights current line
 opt.number = true -- Display the current line number
 opt.relativenumber = true -- Shows distance of other lines relative to current
 opt.statuscolumn = '%2l ' -- Sets the minimum spacing of the numbers column to 3
